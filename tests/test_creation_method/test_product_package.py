@@ -1,4 +1,3 @@
-
 from expects import expect, be_true, be_false
 
 from src.refactoring_to_patterns.creation_method.product_package import ProductPackage
@@ -11,11 +10,13 @@ class TestProductPackage:
     INTERNET_MB = "100MB"
 
     def test_create_with_only_internet(self):
-        product_package = ProductPackage(internet_label=self.INTERNET_MB)
+        basic_package = ProductPackage.create_basic_package(
+            internet_label=self.INTERNET_MB
+        )
 
-        expect(product_package.has_internet()).to(be_true)
-        expect(product_package.has_phone_number()).to(be_false)
-        expect(product_package.has_tv_channels()).to(be_false)
+        expect(basic_package.has_internet()).to(be_true)
+        expect(basic_package.has_phone_number()).to(be_false)
+        expect(basic_package.has_tv_channels()).to(be_false)
 
     def test_create_with_internet_and_phone_number(self):
         standard_phone_package = ProductPackage.create_phone_standard_package(
