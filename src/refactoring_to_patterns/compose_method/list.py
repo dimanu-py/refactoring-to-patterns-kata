@@ -17,8 +17,11 @@ class CustomList:
             if self._list_is_full():
                 self._increase_size_by(10)
 
-            self._elements[self._size] = element
-            self._size += 1
+            self._add(element)
+
+    def _add(self, element: Any) -> None:
+        self._elements[self._size] = element
+        self._size += 1
 
     def _list_is_full(self) -> bool:
         new_size = self._size + 1
