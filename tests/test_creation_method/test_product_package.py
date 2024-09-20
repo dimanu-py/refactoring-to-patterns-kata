@@ -31,8 +31,12 @@ class TestProductPackage:
         expect(product_package.has_tv_channels()).to(be_true)
 
     def test_create_with_internet_phone_number_and_tv_channels(self):
-        product_package = ProductPackage(internet_label=self.INTERNET_MB, telephone_number=self.A_PHONE_NUMBER, tv_channels=self.TV_CHANNELS)
+        premium_package = ProductPackage.create_premium_package(
+            internet_label=self.INTERNET_MB,
+            phone_number=self.A_PHONE_NUMBER,
+            tv_channels=self.TV_CHANNELS
+        )
 
-        expect(product_package.has_internet()).to(be_true)
-        expect(product_package.has_phone_number()).to(be_true)
-        expect(product_package.has_tv_channels()).to(be_true)
+        expect(premium_package.has_internet()).to(be_true)
+        expect(premium_package.has_phone_number()).to(be_true)
+        expect(premium_package.has_tv_channels()).to(be_true)
