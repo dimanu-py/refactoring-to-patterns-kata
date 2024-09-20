@@ -17,6 +17,8 @@ but we refactor the code to make a pattern emerge.
 the Compose method pattern, which consist in breaking the method into smaller methods and call them from the main method.
 2. Creation method: we have a class that can combine different parameters when being created. We want to refactor the code to be able to add
 new combinations without creating a new constructor.
+3. Command pattern: we have a method tha process commands with several if-else statements. We want to refactor the code to be able to apply
+the Command pattern, which consist in creating a class for each command and call the execute method.
 
 ## Objective
 
