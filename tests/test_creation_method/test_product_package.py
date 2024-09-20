@@ -18,11 +18,14 @@ class TestProductPackage:
         expect(product_package.has_tv_channels()).to(be_false)
 
     def test_create_with_internet_and_phone_number(self):
-        product_package = ProductPackage(internet_label=self.INTERNET_MB, telephone_number=self.A_PHONE_NUMBER)
+        standard_phone_package = ProductPackage.create_phone_standard_package(
+            internet_label=self.INTERNET_MB,
+            phone_number=self.A_PHONE_NUMBER
+        )
 
-        expect(product_package.has_internet()).to(be_true)
-        expect(product_package.has_phone_number()).to(be_true)
-        expect(product_package.has_tv_channels()).to(be_false)
+        expect(standard_phone_package.has_internet()).to(be_true)
+        expect(standard_phone_package.has_phone_number()).to(be_true)
+        expect(standard_phone_package.has_tv_channels()).to(be_false)
 
     def test_create_with_internet_and_tv_channels(self):
         standard_tv_package = ProductPackage.create_tv_standard_package(
