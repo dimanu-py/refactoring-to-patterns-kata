@@ -57,6 +57,15 @@ pdm run pytest
 
 ## Learnings
 
+Even though in Python we can't create different constructors for a class, we can still use the Creation Method pattern to let the client
+understand better what is creating depending on the parameters.
+
+Also, creating these methods, allow to introduce business language to the code, making it more readable and maintainable (i.e. creating a
+premium package, or a basic package).
+
+Applying the Creating Method pattern is different from the Factory Method pattern. The second one is more intended for a polymorphic behavior,
+while the first one is more intended to create different objects depending on the parameters.
+
 ### Visit my GitHub profile to see all solved katas 🚀
 
 [![Web](https://img.shields.io/badge/GitHub-Dimanu.py-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/dimanu-py/code-katas)
