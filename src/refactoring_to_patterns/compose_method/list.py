@@ -14,13 +14,15 @@ class CustomList:
 
     def add(self, element: Any) -> None:
         if not self._read_only:
-            new_size = self._size + 1
-
-            if new_size > len(self._elements):
+            if self._list_is_full():
                 self._increase_size_by(10)
 
             self._elements[self._size] = element
             self._size += 1
+
+    def _list_is_full(self) -> bool:
+        new_size = self._size + 1
+        return new_size > len(self._elements)
 
     def _increase_size_by(self, amount: int) -> None:
         new_elements = [None] * (len(self._elements) + amount)
