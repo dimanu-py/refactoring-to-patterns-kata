@@ -53,7 +53,15 @@ or
 pdm run pytest
 ```
 
-## Learnings
+## Learnings:
+
+1. Compose method pattern
+
+We begin extracting methods from the deepest branches of the method because they are the most decoupled from the rest of the code.
+
+The initial methods leaves as an orchestration method that calls the extracted methods. By doing this we are giving a high level semantic to
+the method, making it easier to understand. If we want to understand the details of the method, we can go to the extracted methods.
+
 
 ### Visit my GitHub profile to see all solved katas 🚀
 
